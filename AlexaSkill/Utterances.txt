@@ -1,0 +1,9 @@
+remoteTempRead what temperature it is
+remoteTempRead what temperature is is measuring
+remoteTempRead how hot it is in here
+remoteTempRead how cold it is in here
+remoteTempChange change the temperature to {changed_temp} degrees
+remoteTempChange change the temperature to {changed_temp}
+AMAZON.HelpIntent help
+AMAZON.CancelIntent cancel 
+AMAZON.StopIntent stop
