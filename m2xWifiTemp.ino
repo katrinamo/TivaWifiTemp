@@ -5,6 +5,8 @@
    This code example released to the public domain.
 */
 
+// Edited by Katie Long and Madison Tolson
+
 #include <aJSON.h>
 #include "SPI.h"
 #include "WiFi.h"
@@ -28,6 +30,11 @@ int changedTemp;
 //Temp read and then the value
 int readTemp;
 int TempF;
+
+//used for acknowledgement
+double difference = 0;
+double lastValue;
+#define LED RED_LED
 
 WiFiClient client;
 M2XStreamClient m2xClient(&client, m2xKey);
@@ -111,6 +118,16 @@ void loop() {
           break;
         case aJson_Float:
           Serial.println(val->valuefloat);
+            //If the value has been pushed to the Tiva, blink the light.
+            difference = (lastValue - (double)val->valuefloat);
+            Serial.println(difference);
+            if(difference != 0){
+              lastValue = val->valuefloat;    
+              digitalWrite(LED, HIGH);   // turn the LED on (HIGH is the voltage level)
+              delay(1000);               // wait for a second
+              digitalWrite(LED, LOW);    // turn the LED off by making the voltage LOW0
+              delay(1000);               // wait for a second 
+            }
           break;
         case aJson_String:
           Serial.println(val->valuestring);
