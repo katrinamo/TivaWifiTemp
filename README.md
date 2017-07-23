@@ -1,6 +1,7 @@
-# This skill is no longer being maintained due to privacy concerns. Don't want random people changing my temp.
 
 # TivaWifiTemp
+## This skill is no longer under certification review
+
 Connects a Tiva Launchpad with a CC3100 to the AT&amp;T M2X IoT service. Asking an Alexa with this skill for the local temperature pings the Launchpad, which returns the temperature using the board sensor. Alexa then responds to the user with the temperature. Users may then instruct Alexa to send a different temperature to the board. As of this version (v0.1), the board merely lights up and LED to acknowledge the different temperature.
 
 **REQUIREMENTS:** Energia
